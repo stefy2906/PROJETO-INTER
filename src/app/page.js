@@ -5,8 +5,8 @@ import { useRouter } from "next/navigation";
 
 export default function Login() {
   const [user, setUser] = useState({
-    email: '',
-    password: '',
+    email: 'stefany@gmail.com',
+    password: '1234',
   });
   const { push, refresh } = useRouter();
 
