@@ -7,8 +7,8 @@ import 'react-toastify/dist/ReactToastify.css'
 
 export default function Login() {
   const [user, setUser] = useState({
-    email: 'stefany@gmail.com',
-    password: '1234',
+    email: '',
+    password: '',
   });
   const { push, refresh } = useRouter();
 
