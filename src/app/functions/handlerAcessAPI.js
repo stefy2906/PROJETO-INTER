@@ -27,7 +27,7 @@ const getUserAuthenticated = (users) =>{ //armazena os objetos
 }
 
 const getUsers = () =>{
-     return users // retorna todos os usuários
+     return usuario // retorna todos os usuários
 }
 
 
