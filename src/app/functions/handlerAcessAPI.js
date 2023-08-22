@@ -12,6 +12,12 @@ const usuario= [
         email:'marcelino@gmail.com',
         password: '6878',
         token: 'ewuheuwinbfjwbeuwfgsdvk'
+    },
+    {
+        name: 'Natasha',
+        email:'natash@gmail.com',
+        password: '1698',
+        token: 'suyqiydihbe3vtywevkdasi'
     }
  ]
 
