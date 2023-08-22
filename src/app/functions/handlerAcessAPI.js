@@ -1,7 +1,6 @@
 'use server'
 
-const getUserAuthenticated = (user) => {
-    const usuario= [
+const usuario= [
         {
         name: 'Stefany',
         email:'stefany@gmail.com',
@@ -15,10 +14,21 @@ const getUserAuthenticated = (user) => {
         token: 'ewuheuwinbfjwbeuwfgsdvk'
     }
  ]
+
+
+const getUserAuthenticated = (users) =>{ //armazena os objetos
+    let usuarioAutenticado={}; 
+    users.map((recebe)=> { //mapea os itens q vem do usuário
+        if(users.email === recebe.email && users.senha === recebe.senha){
+            usuarioAutenticado = recebe
+        }
+    })
+ return usuarioAutenticado
 }
 
 const getUsers = () =>{
-    
-
+     return users // retorna todos os usuários
 }
+
+
 export { getUsers, getUserAuthenticated };
