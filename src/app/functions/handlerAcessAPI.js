@@ -29,11 +29,11 @@ const getUserAuthenticated = (users) =>{ //armazena os objetos
             usuarioAutenticado = recebe
         }
     })
- return usuarioAutenticado
+ return usuarioAutenticado;
 }
 
 const getUsers = () =>{
-     return usuario // retorna todos os usuários
+     return usuario; // retorna todos os usuários
 }
 
 

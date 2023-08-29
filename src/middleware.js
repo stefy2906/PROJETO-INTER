@@ -24,4 +24,3 @@ export const middleware = (request) => {
 export const config = {
     matcher: ['/', '/pages/dashboard']
 };
-jj 
