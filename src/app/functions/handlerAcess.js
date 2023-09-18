@@ -1,20 +1,30 @@
-import Cookies from "js-cookie";
-import { validateToken } from "./validateToken";
-import { getUserAuthenticated } from "./handlerAcessAPI";
+import { NextResponse } from "next/server";
+import { validateToken } from "./app/functions/validateToken";
 
-const handlerAcessUser = async (user) => {
+export const middleware = (request) => {
+    const token = request.cookies.get('token')?.value;
+    const urlLogin = new URL('/', request.url);
+    const urldash = new URL('/pages/dashboard', request.url);
 
-    const userAuth = await getUserAuthenticated(user);
     
-    const isTokenValidate = validateToken(userAuth.token);
+    const isTokenValidated = validateToken(token);
 
-    if (isTokenValidate) {
-        Cookies.set('token', userAuth.token, { expires: 1 });
-
-        if(typeof window !== 'undefined'){
-            localStorage.setItem('name', userAuth.name)
+    if (!isTokenValidated || !token) {
+        if (request.nextUrl.pathname === '/pages/dashboard' || 
+        request.nextUrl.pathname === '/pages/alterar' || request.nextUrl.pathname === '/pages/registrar' ) {
+            return NextResponse.redirect(urlLogin);
         }
     }
-}
-export default handlerAcessUser;
 
+    if (isTokenValidated) {
+        if (request.nextUrl.pathname === '/') {
+            return NextResponse.redirect(urldash);
+        }
+    }
+    
+    NextResponse.next();
+};
+
+export const config = {
+    matcher: ['/', '/pages/dashboard', '/pages/alterar', '/pages/registrar',  ] // Adicione as URLs das páginas "alter" e "register"
+};
