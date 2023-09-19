@@ -24,8 +24,7 @@ const Form = () => {
         <input
           placeholder='E-mail'
           type="email"
-         >
-        </input>
+         ></input>
         <input
           placeholder='Senha'
           type='password'
@@ -34,7 +33,6 @@ const Form = () => {
         </div>
         <button class="button-1"  ><span class="text">Salvar</span></button>
         <button class="button-2"><span class="text"><a href="/pages/dashboard">Voltar</a></span></button>
-     
       </form>
       <ToastContainer/>
     </div>

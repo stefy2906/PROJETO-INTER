@@ -1,12 +1,10 @@
 body{
   height:505px;
-  font-family: Arial, Helvetica, sans-serif;
-  background-image: url("https://images.tcdn.com.br/img/img_prod/697730/adesivo_lateral_vidro_caminhao_carro_decorativo_pantera_cor_de_rosa_1147486528_1_6704304bea8d50ab62a3eef851fc63ea.jpg");
-  background-position: right;
-  background-repeat: no-repeat;
-  background-size:contain;
-  background-color: black;
-  color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("https://assets.stickpng.com/images/58b8352515d8273a5cab2f6f.png");
+    background-repeat: no-repeat;
+    background-size:contain;
+    padding: 10%;
 }
 form{
   background-color: #f2a3b3;
@@ -32,6 +30,7 @@ h1{
   color: white;
 }
 .button-1 {
+  padding: 10px 23px;
   margin-left: 15px;
   align-items: center;
   border: 0;
@@ -52,7 +51,7 @@ h1{
   color: white;
   padding: 10px 23px;
   border-radius: 6px;
-  width: 55%;
+  width: 50%;
   height: 50%;
   transition: 300ms;
   text-align: center;
@@ -88,6 +87,8 @@ a{
   width: 50%;
   height: 50%;
   transition: 300ms;
+  text-align: center;
+
 }
 
 
