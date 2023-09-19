@@ -1,8 +1,8 @@
 
 
 export const metadata = {
-  title: 'Register users',
-  description: 'Project for class PTAC',
+  title: 'TRAB N1',
+  description: 'TRABALHO N1 - PROJETO USERS',
 }
 
 export default function RootLayout({ children }) {

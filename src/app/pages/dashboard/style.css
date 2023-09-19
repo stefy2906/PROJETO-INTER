@@ -80,3 +80,6 @@ body{
     height: 50%;
     transition: 300ms;
   }
+  p{
+    color: #f2a3b3;
+  }
