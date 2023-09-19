@@ -1,6 +1,6 @@
 
 'use client'
-import "./style.css"
+import "./style.css";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -9,16 +9,13 @@ const Form = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
  
-     toast.success('VIngador alterado com sucesso ')
+     toast.success('Alterado com sucesso ')
     // Verifique se onSubmit é uma função antes de chamá-la
     
     }
   return (
     <div>
-      
       <form onSubmit={handleSubmit}>
-      <div class="avatar">
-      </div>
       <h1>Alterar</h1>
       <input
           placeholder='Nome'
@@ -35,8 +32,8 @@ const Form = () => {
           type='password'
           >
         </input>
-        <button class="button-64"  ><span class="text">Alterar</span></button>
-        <button class="button-65"><span class="text"><a href="/pages/dashboard">Voltar</a></span></button>
+        <button class="button-1"  ><span class="text">Alterar</span></button>
+        <button class="button-2"><span class="text"><a href="/pages/dashboard">Voltar</a></span></button>
       </form>
       <ToastContainer/>
     </div>
