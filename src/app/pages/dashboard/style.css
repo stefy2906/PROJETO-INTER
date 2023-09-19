@@ -6,3 +6,77 @@ body{
     background-repeat: no-repeat;
     background-size:contain;
   }
+  .button-1 {
+    margin-left: 15px;
+    margin-top: 15px;
+    align-items: center;
+    border: 0;
+    border-radius: 8px;
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100px;
+    min-width: 100px;
+    padding: 3px;
+    text-decoration: none;
+  }
+  .button-1 span {
+    background-color: #f2a3b3;
+    color: white;
+    padding: 10px 23px;
+    border-radius: 6px;
+    width: 55%;
+    height: 50%;
+    transition: 300ms;
+    text-align: center;
+  }
+  
+  .button-2 {
+    margin-top: -18.5%;
+    align-items: center;
+    border: 0;
+    border-radius: 8px;
+    box-sizing: border-box;
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100px;
+    min-width: 100px;
+    padding: 3px;
+    text-decoration: none;
+  }
+  .button-2 span {
+    color: white;
+    background-color: #f2a3b3;
+    padding: 10px 23px;
+    border-radius: 6px;
+    width: 50%;
+    height: 50%;
+    transition: 300ms;
+  }
+  .excluir {
+    margin-top: -18.5%;
+    align-items: center;
+    border: 0;
+    border-radius: 8px;
+    box-sizing: border-box;
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100px;
+    min-width: 100px;
+    padding: 3px;
+    text-decoration: none;
+  }
+  .excluir span {
+    color: white;
+    background-color: #f2a3b3;
+    padding: 10px 23px;
+    border-radius: 6px;
+    width: 50%;
+    height: 50%;
+    transition: 300ms;
+  }
