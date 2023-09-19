@@ -4,7 +4,7 @@ import "./style.css"
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
-const UserForm = () => {
+const Form = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -43,4 +43,4 @@ const UserForm = () => {
   );
 };
 
-export default UserForm;
+export default Form;
