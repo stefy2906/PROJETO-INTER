@@ -24,7 +24,9 @@ const users= [
 
 const getUserAuthenticated = (userLogin) =>{ //armazena os objetos
     let usuarioAutenticado={}; 
-    user.map((user)=> { //mapea os itens q vem do usuário
+
+
+    users.map((user)=> { //mapea os itens q vem do usuário
         if(user.email === userLogin.email && user.password === userLogin.password){
             usuarioAutenticado = user
         }

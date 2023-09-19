@@ -7,14 +7,14 @@ import 'react-toastify/dist/ReactToastify.css';
 const Form = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
-     toast.success('Vingador registrado com sucesso ')
+     toast.success('Registrado com sucesso ')
     // Verifique se onSubmit é uma função antes de chamá-la
     
     }
   return (
     <div>
       <form onSubmit={handleSubmit}>
-      <div class="avatar"> </div>
+      <div class="form"> </div>
       <h1>Registrar</h1>
       <div className="input">
       <input 

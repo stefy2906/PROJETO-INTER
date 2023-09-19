@@ -9,6 +9,6 @@ export default function RootLayout() {
   }
   const {refresh} = useRouter();
   return (
-    <button onClick={sair} class="excluir" role="button" ><span class="text">Excluir</span></button>
+    <button onClick={sair} class="Excluir" role="button" ><span class="text">Excluir</span></button>
   )
 }

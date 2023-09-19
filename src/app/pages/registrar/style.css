@@ -5,13 +5,15 @@ body{
   background-position: right;
   background-repeat: no-repeat;
   background-size:contain;
+  background-color: black;
+  color: white;
 }
 form{
   background-color: #f2a3b3;
+  color: white;
   padding:20px 20px;
   width: 250px;
   height: 350px;
-  margin-top: 10%;
   margin-left: 40%;
   border: 2px solid white;
   align-items: center;
@@ -19,7 +21,6 @@ form{
 }
 input{
 padding: 15px 30px;
-  margin-top: 5px;
   margin-left: 15px;
   border-radius: 10px;
   color: #f2a3b3;
@@ -32,7 +33,6 @@ h1{
 }
 .button-1 {
   margin-left: 15px;
-  margin-top: 15px;
   align-items: center;
   border: 0;
   border-radius: 8px;
@@ -61,10 +61,9 @@ h1{
 a{
   color: white;
   text-decoration: none;
-  text-align: center;
 }
 .button-2 {
-  margin-top: -18.5%;
+ 
   margin-left: 54%;
   align-items: center;
   border: 0;
