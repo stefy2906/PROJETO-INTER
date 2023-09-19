@@ -47,7 +47,7 @@ export default function Login() {
         ></input>
         <button class="button-1"><span class="text">Entrar</span></button>
       </form>
-      <ToastContainer />
+      <ToastContainer/>
     </div>
   );
 }
