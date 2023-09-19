@@ -3,8 +3,9 @@ import { Suspense } from "react";
 import ListUser from "@/app/componets/ListUser";
 import "./style.css"
 import Excluir from "@/app/componets/excluir"
-export default  function Dashboard() {
 
+
+export default  function Dashboard() {
 
    const users =  getUsers() 
     return (
