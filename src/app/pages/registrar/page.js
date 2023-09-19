@@ -32,8 +32,8 @@ const Form = () => {
           >
         </input>
         </div>
-        <button class="button-64"  ><span class="text">Salvar</span></button>
-        <button class="button-65"><span class="text"><a href="/pages/dashboard">Voltar</a></span></button>
+        <button class="button-1"  ><span class="text">Salvar</span></button>
+        <button class="button-2"><span class="text"><a href="/pages/dashboard">Voltar</a></span></button>
      
       </form>
       <ToastContainer/>

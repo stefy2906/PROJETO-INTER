@@ -22,5 +22,5 @@ export const middleware = (request) => {
     NextResponse.next();
 };
 export const config = {
-    matcher: ['/', '/pages/dashboard', '/pages/alterar', '/pages/registrar',  ] // URLs das páginas "alter" e "register"
+    matcher: ['/', , '/pages/alterar', '/pages/registrar',  ] // URLs das páginas "alter" e "register"
 };

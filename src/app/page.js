@@ -4,6 +4,8 @@ import  handlerAcessUser  from "./functions/handlerAcess";
 import { useRouter } from "next/navigation";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import styles from "../globals.css";
+
 
 export default function Login() {
   const [user, setUser] = useState({
@@ -27,8 +29,8 @@ export default function Login() {
   };
   return (
     <div>
-      <h1>Login</h1>
       <form onSubmit={handlerLogin}>
+      <h1>Login</h1>
         <input
           placeholder="E-mail"
           type="email"
@@ -43,7 +45,7 @@ export default function Login() {
             setUser({ ...user, password: e.target.value });
           }}
         ></input>
-        <button>Entrar</button>
+        <button class="button-1"><span class="text">Entrar</span></button>
       </form>
       <ToastContainer />
     </div>
