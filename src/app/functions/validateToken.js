@@ -11,7 +11,7 @@ const validateToken = async(token) => {
         if(isTokenValidate){
             return true
         }
-    } catch (error) {
+    } catch{
         return false;
     }
 }   

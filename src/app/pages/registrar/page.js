@@ -10,7 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 
-export default function Register() {
+export default function Registrar() {
   const [user, setUser] = useState({
     name: '',
     email: '',
