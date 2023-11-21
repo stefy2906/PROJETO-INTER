@@ -1,4 +1,5 @@
 'use server'
+import {cookies} from 'next/headers';
 
 const url = "https://aula-17-10-kappa.vercel.app";
 
@@ -21,7 +22,7 @@ const getUserAuthenticated = async (user) => { //armazena os objetos
 //lista os usuários
 const getUsers = async () =>{
  try {
-   const respondeOfApi = awa fetch(url + "/user", {
+   const respondeOfApi = awa fetch(`${url}/user${id}`,{
       next: {revalidate: 10}
    })
    const ListaUsers = responseOfApi.json()
@@ -33,11 +34,33 @@ const getUsers = async () =>{
  }
 }
 
+//autenticar
+const updateUser = async (user, id) => {
+   const token = cookies().get('token')?.value;
+   try {
+      const respondeOfApi = awa fetch(`${url}/user${id}`, {
+         method: 'PUT',
+         headers: {
+            'Content-Type': 'Aplication/json',
+            Cookie: `token=${token}`
+         },
+         body: JSON.stringify(user)
+      });
+      const userSave = await respondeOfApi.json();
+      return userSave;
+   } catch {
+      return null;
+   }
+}
+
+
 const postUser = async (user) => {
    try {
-      const respondeOfApi = awa fetch(url + "/user", {
+      const respondeOfApi = awa fetch(url + "/user",{
          method: 'POST',
-         headers: {'Content-Type': 'Aplication/json' },
+         headers: {
+            'Content-Type': 'Aplication/json'
+          },
          body: JSON.stringify(user)
       });
    } catch {
