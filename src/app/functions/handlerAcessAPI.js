@@ -69,4 +69,4 @@ const postUser = async (user) => {
 }
 
 
-export { getUsers, getUserAuthenticated, postUser };
+export { getUsers, getUserAuthenticated, postUser, updateUser };
