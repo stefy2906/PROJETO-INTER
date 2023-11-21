@@ -3,7 +3,8 @@ import {cookies} from 'next/headers';
 
 const url = "https://aula-17-10-kappa.vercel.app";
 
-const getUserAuthenticated = async (user) => { //armazena os objetos
+const getUserAuthenticated = async (user) => { 
+   try{//armazena os objetos
   const responseOfApi = await fetch(url +  "/user/authenticated",
      {
         method:"POST",
@@ -14,15 +15,14 @@ const getUserAuthenticated = async (user) => { //armazena os objetos
  const userAuth = await responseOfApi.json();
  return userAuth;
 } catch {
-
    return null;
  }
-
+}
 
 //lista os usuários
 const getUsers = async () =>{
  try {
-   const respondeOfApi = awa fetch(`${url}/user${id}`,{
+   const respondeOfApi = await fetch(`${url}/user${id}`,{
       next: {revalidate: 10}
    })
    const ListaUsers = responseOfApi.json()
@@ -38,7 +38,7 @@ const getUsers = async () =>{
 const updateUser = async (user, id) => {
    const token = cookies().get('token')?.value;
    try {
-      const respondeOfApi = awa fetch(`${url}/user${id}`, {
+      const respondeOfApi = await fetch(`${url}/user${id}`, {
          method: 'PUT',
          headers: {
             'Content-Type': 'Aplication/json',
@@ -56,7 +56,7 @@ const updateUser = async (user, id) => {
 
 const postUser = async (user) => {
    try {
-      const respondeOfApi = awa fetch(url + "/user",{
+      const respondeOfApi = await fetch(url + "/user",{
          method: 'POST',
          headers: {
             'Content-Type': 'Aplication/json'
