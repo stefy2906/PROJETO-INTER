@@ -8,11 +8,11 @@ const Form = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
- 
      toast.success('Alterado com sucesso ')
     // Verifique se onSubmit é uma função antes de chamá-la
-    
     }
+
+    
   return (
     <div>
       <form onSubmit={handleSubmit}>

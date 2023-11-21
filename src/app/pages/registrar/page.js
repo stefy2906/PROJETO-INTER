@@ -19,13 +19,13 @@ export default function Registrar() {
   const { push } = useRouter();
 
     const handleFormSubmit = async (event) => {
-      e.preventDefault();
-    try {
-      await postUser(user);
-      return push("/pages/dashboard");
-    } catch{
-      return toast.error("Erro")
-    }
+          e.preventDefault();
+      await updateUser(user, params.id);
+      await new Promise((resolve) => {
+        toast.success("Usuário cadastrado com sucesso!");
+        setTimeout(resolve, 5000);
+      });
+   return push("/pages/dashboard");
       
  }
 }
