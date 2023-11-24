@@ -32,6 +32,7 @@ export default function Login() {
       <h1>Login</h1>
         <input
           placeholder="Nome"
+          name="name"
           type="text"
           onChange={(e) => {
             setUser({ ...user, name: e.target.value });
