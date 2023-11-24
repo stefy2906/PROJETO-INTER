@@ -1,7 +1,7 @@
 'use server'
 import {cookies} from 'next/headers';
 
-const url = "https://aula-17-10-kappa.vercel.app";
+const url = "https://localhost:4000";
 
 const getUserAuthenticated = async (user) => { 
    try{//armazena os objetos
