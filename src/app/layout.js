@@ -1,8 +1,8 @@
 
 
 export const metadata = {
-  title: 'TRAB N1',
-  description: 'TRABALHO N1 - PROJETO USERS',
+  title: 'TRAB',
+  description: 'PROJETO INTERDICIPLINAR',
 }
 
 export default function RootLayout({ children }) {
