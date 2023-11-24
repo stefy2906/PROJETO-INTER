@@ -9,7 +9,7 @@ import styles from "../globals.css";
 
 export default function Login() {
   const [user, setUser] = useState({
-    email: "",
+    name: "",
     password: "",
   });
   const { push, refresh } = useRouter();
@@ -19,7 +19,7 @@ export default function Login() {
     try {
       const userAuth = await handlerAcessUser(user);
       if (userAuth.token === undefined) {
-        toast.error("Erro no e-mail ou senha!");
+        toast.error("Erro no nome ou senha!");
       }
       push("/pages/dashboard");
     } catch {
@@ -31,10 +31,10 @@ export default function Login() {
       <form onSubmit={handlerLogin}>
       <h1>Login</h1>
         <input
-          placeholder="E-mail"
-          type="email"
+          placeholder="Nome"
+          type="text"
           onChange={(e) => {
-            setUser({ ...user, email: e.target.value });
+            setUser({ ...user, name: e.target.value });
           }}
         ></input>
         <input

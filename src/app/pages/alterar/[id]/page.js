@@ -19,7 +19,7 @@ const Form = () => {
       <h1>Alterar</h1>
       <input
           placeholder='Nome'
-          type="Nome"
+          type="text"
           >
         </input>
         <input

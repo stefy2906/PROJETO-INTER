@@ -5,7 +5,7 @@ const url = "https://localhost:4000";
 
 const getUserAuthenticated = async (user) => { 
    try{//armazena os objetos
-  const responseOfApi = await fetch(url +  "/user/authenticated",
+  const responseOfApi = await fetch(url +  "/logar",
      {
         method:"POST",
         headers:{"Content-Type":"Application/json"},
