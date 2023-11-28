@@ -1,7 +1,7 @@
 
 
 export const metadata = {
-  title: 'TRAB',
+  title: 'Cliente',
   description: 'PROJETO INTERDICIPLINAR',
 }
 

@@ -5,7 +5,7 @@ const url = "https://localhost:4000";
 
 const getUserAuthenticated = async (user) => { 
    try{//armazena os objetos
-  const responseOfApi = await fetch(url +  "/logar",
+  const responseOfApi = await fetch(url + "/logar",
      {
         method:"POST",
         headers:{"Content-Type":"Application/json"},
@@ -17,7 +17,7 @@ const getUserAuthenticated = async (user) => {
 } catch {
    return null;
  }
-}
+};
 
 //lista os usuários
 const getUsers = async () =>{
@@ -32,7 +32,7 @@ const getUsers = async () =>{
 
    return null;
  }
-}
+};
 
 //autenticar
 const updateUser = async (user, id) => {
@@ -51,7 +51,7 @@ const updateUser = async (user, id) => {
    } catch {
       return null;
    }
-}
+};
 
 
 const postUser = async (user) => {
@@ -66,7 +66,25 @@ const postUser = async (user) => {
    } catch {
       return null;
    }
+};
+
+const getUser = async(id) => {
+   const token = cookies().get('token')?.value;
+   try {
+      const respondeOfApi = await fetch(`${url}/user${id}`,{
+         method:'GET',
+         headers:{
+            'Content-Type': 'Application/json',
+            Cookie:`token=${token}`
+         },
+      })
+      const user = await respondeOfApi.json();
+      return user;
+   } catch {
+      return null;
+   }
 }
 
 
-export { getUsers, getUserAuthenticated, postUser, updateUser };
+
+export { getUsers, getUserAuthenticated, postUser, updateUser, getUser };

@@ -44,15 +44,15 @@ app.post('/logar', async (req, res) => {
   const token = jwt.sign({id}, process.env.SECRET, {
     expiresIn: 300 //gera um token JWT 
   })
-
 res.cookie('token', token, {httpOnly : true}).json({
    name: u.name,
    token:token,
 });
- return res.json(u)
   }
   res.status(500).json({mensagem:"Login Inválido"}) 
 })
+
+
 
 app.post('/deslogar', function(req, res) {
   res.cookie('token', null, {httpOnly:true});
