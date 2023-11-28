@@ -4,6 +4,12 @@ const jwt = require('jsonwebtoken');
 var { expressjwt: expressJWT } = require("express-jwt");
 const crypto = require('./crypto');
 const cors = require('cors');
+const corsOptions = {
+  origin: "http://localhost:3000",
+  methods: "GET, PUT, POST, DELETE",
+  allowedHeaders: "Content-Type, Authorization",
+  credentials: true,
+}
 
 var cookieParser = require('cookie-parser')
 
@@ -11,6 +17,8 @@ const express = require('express');
 const { usuario } = require('./models');
 
 const app = express();
+
+app.use(cors(corsOptions))
 
 app.set('view engine', 'ejs');
 
