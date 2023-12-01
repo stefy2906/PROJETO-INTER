@@ -13,26 +13,27 @@ import 'react-toastify/dist/ReactToastify.css';
 export default function Registrar() {
   const [user, setUser] = useState({
     name: '',
-    email: '',
-    password:'',
+    password: '',
+    confirmesenha:'',
   });
   const { push } = useRouter();
 
     const handleFormSubmit = async (event) => {
-          e.preventDefault();
-      await updateUser(user, params.id);
-      await new Promise((resolve) => {
-        toast.success("Usuário cadastrado com sucesso!");
-        setTimeout(resolve, 5000);
-      });
-   return push("/pages/dashboard");
-      
- }
-}
+          event.preventDefault();
+
+
+       try{
+      await postUser(user);
+      return push("/pages/dashboard");
+    } catch{
+      return toast.error("Erro");
+    }
+  }
+
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleFormSubmit}>
       <div class="form"> </div>
       <h1>Registrar</h1>
       <div className="input">
@@ -49,14 +50,14 @@ export default function Registrar() {
            id="email"
            placeholder='Email'
            onChange={(e) => {
-             setUser({...user, email: e.target.value});
+             setUser({...user, password: e.target.value});
            }}
          ></input>
         <input
           placeholder='Senha'
           type='password'
           onChange={(e) => {
-            setUser({...user, password: e.target.value});
+            setUser({...user, confirmesenha: e.target.value});
           }}
         ></input>
         </div>
@@ -67,5 +68,4 @@ export default function Registrar() {
     </div>
   );
 
-
-export default Form;
+        }

@@ -1,90 +1,61 @@
 'use server'
-import {cookies} from 'next/headers';
 
-const url = "https://localhost:4000";
+import { cookies } from "next/dist/client/components/headers";
+
+const url = "http://localhost:4091";
 
 const getUserAuthenticated = async (user) => { 
    try{//armazena os objetos
   const responseOfApi = await fetch(url + "/logar",
      {
+      cache:"no-cache",
         method:"POST",
-        headers:{"Content-Type":"Application/json"},
+        headers:{"Content-Type":"Application/json"
+      },
         body:JSON.stringify(user)
      }
   );
  const userAuth = await responseOfApi.json();
+ console.log(userAuth)
  return userAuth;
-} catch {
-   return null;
- }
-};
+}catch{
+   return null
+}}
 
 //lista os usuários
 const getUsers = async () =>{
- try {
-   const respondeOfApi = await fetch(`${url}/user${id}`,{
-      next: {revalidate: 10}
-   })
-   const ListaUsers = responseOfApi.json()
+   const token = cookies().get("token")?.value;
+   try{
+       const responseOfApi = await fetch(url + "/usuarios/listar",{
+           method:"GET",
+           headers:{'Content-type': 'Application/json',
+           Cookie:`token=${token}`}
+       
+       });
+       const listUsers = await responseOfApi.json();
 
-   return ListaUsers
- } catch {
-
-   return null;
- }
-};
-
-//autenticar
-const updateUser = async (user, id) => {
-   const token = cookies().get('token')?.value;
-   try {
-      const respondeOfApi = await fetch(`${url}/user${id}`, {
-         method: 'PUT',
-         headers: {
-            'Content-Type': 'Aplication/json',
-            Cookie: `token=${token}`
-         },
-         body: JSON.stringify(user)
-      });
-      const userSave = await respondeOfApi.json();
-      return userSave;
-   } catch {
-      return null;
+       return listUsers
+   }catch{
+       return null;
    }
-};
 
+   }
 
 const postUser = async (user) => {
-   try {
-      const respondeOfApi = await fetch(url + "/user",{
-         method: 'POST',
-         headers: {
-            'Content-Type': 'Aplication/json'
-          },
-         body: JSON.stringify(user)
-      });
-   } catch {
-      return null;
-   }
-};
-
-const getUser = async(id) => {
-   const token = cookies().get('token')?.value;
-   try {
-      const respondeOfApi = await fetch(`${url}/user${id}`,{
-         method:'GET',
-         headers:{
-            'Content-Type': 'Application/json',
-            Cookie:`token=${token}`
-         },
-      })
-      const user = await respondeOfApi.json();
-      return user;
-   } catch {
+   console.log(user)
+   const token = cookies().get("token")?.value;
+   try{
+       const responseOfApi = await fetch(url + "/usuarios/cadastrar", {
+           method: "POST",
+           headers: { 'Content-Type': 'Application/json',
+           Cookie:`token=${token}`,},
+           body: JSON.stringify(user)
+       });
+       const userSave = await responseOfApi.json();
+       return userSave;
+   }catch{
       return null;
    }
 }
 
-
-
-export { getUsers, getUserAuthenticated, postUser, updateUser, getUser };
+export { getUsers, getUserAuthenticated, postUser};

@@ -1,8 +1,14 @@
+const crypto = require('./crypto');
+
+const encrypted_key = crypto.encrypt("HelloWorld");
+console.log(encrypted_key);
+const decrypted_key = crypto.decrypt(encrypted_key);
+console.log(decrypted_key);
+
 // JWT
 require("dotenv-safe").config();
 const jwt = require('jsonwebtoken');
 var { expressjwt: expressJWT } = require("express-jwt");
-const crypto = require('./crypto');
 const cors = require('cors');
 const corsOptions = {
   origin: "http://localhost:3000",
@@ -21,8 +27,6 @@ const app = express();
 app.use(cors(corsOptions))
 
 app.set('view engine', 'ejs');
-
-app.use(cors());
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
@@ -46,13 +50,13 @@ app.get('/', async function(req, res){
 })
 
 app.post('/logar', async (req, res) => {
-  const u = await usuario.findOne({ where: { name: req.body.name, senha: crypto.encrypt(req.body.senha) } });
+  const u = await usuario.findOne({ where: { name: req.body.nome, senha: crypto.encrypt(req.body.senha) } });
   if(u){
   const id = 1;
   const token = jwt.sign({id}, process.env.SECRET, {
     expiresIn: 300 //gera um token JWT 
   })
-res.cookie('token', token, {httpOnly : true}).json({
+return res.cookie('token', token, {httpOnly : true}).json({
    name: u.name,
    token:token,
 });
@@ -100,6 +104,6 @@ app.post('/usuarios/cadastrar', async function(req, res){
   });
 
 
-app.listen(4000, function() {
-  console.log('App de Exemplo escutando na porta 4000!')
+app.listen(4091, function() {
+  console.log('App de Exemplo escutando na porta 4091!')
 });

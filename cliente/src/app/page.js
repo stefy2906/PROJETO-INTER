@@ -10,7 +10,7 @@ import styles from "../globals.css";
 export default function Login() {
   const [user, setUser] = useState({
     name: "",
-    password: "",
+    senha: "",
   });
   const { push, refresh } = useRouter();
 
@@ -42,7 +42,7 @@ export default function Login() {
           placeholder="Senha"
           type="password"
           onChange={(e) => {
-            setUser({ ...user, password: e.target.value });
+            setUser({ ...user, senha: e.target.value });
           }}
         ></input>
         <button class="button-1"><span class="text">Entrar</span></button>
