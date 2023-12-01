@@ -1,6 +1,5 @@
 
 'use client'
-
 import "./style.css"
 import { postUser } from '@/app/functions/handlerAcessAPI';
 import { useRouter } from 'next/navigation';

@@ -11,7 +11,7 @@ const jwt = require('jsonwebtoken');
 var { expressjwt: expressJWT } = require("express-jwt");
 const cors = require('cors');
 const corsOptions = {
-  origin: "http://localhost:3000",
+  origin: "http://localhost:4091",
   methods: "GET, PUT, POST, DELETE",
   allowedHeaders: "Content-Type, Authorization",
   credentials: true,
@@ -50,7 +50,7 @@ app.get('/', async function(req, res){
 })
 
 app.post('/logar', async (req, res) => {
-  const u = await usuario.findOne({ where: { name: req.body.nome, senha: crypto.encrypt(req.body.senha) } });
+  const u = await usuario.findOne({ where: { nome: req.body.name, senha: crypto.encrypt(req.body.password) } });
   if(u){
   const id = 1;
   const token = jwt.sign({id}, process.env.SECRET, {
@@ -58,7 +58,7 @@ app.post('/logar', async (req, res) => {
   })
 return res.cookie('token', token, {httpOnly : true}).json({
    name: u.name,
-   token:token,
+   token:token
 });
   }
   res.status(500).json({mensagem:"Login Inválido"}) 

@@ -45,7 +45,7 @@ export default function Login() {
             setUser({ ...user, senha: e.target.value });
           }}
         ></input>
-        <button class="button-1"><span class="text">Entrar</span></button>
+        <button className="button-1"><span className="text">Entrar</span></button>
       </form>
       <ToastContainer/>
     </div>

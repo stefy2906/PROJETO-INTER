@@ -6,15 +6,17 @@ const url = "http://localhost:4091";
 
 const getUserAuthenticated = async (user) => { 
    try{//armazena os objetos
+     // console.log(user)
   const responseOfApi = await fetch(url + "/logar",
      {
-      cache:"no-cache",
+       cache:"no-cache",
         method:"POST",
         headers:{"Content-Type":"Application/json"
       },
         body:JSON.stringify(user)
      }
   );
+ console.log(user) //ERROR
  const userAuth = await responseOfApi.json();
  console.log(userAuth)
  return userAuth;

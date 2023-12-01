@@ -27,5 +27,5 @@ export const middleware = async (request) => {
 };
 
 export const config = {
-    matcher: ['/', '/pages/dashboard', '/pages/alterar', '/pages/registrar',  ] // URLs das páginas "alter" e "register"
+    matcher: ['/', '/pages/dashboard','/pages/registrar',  ] // URLs das páginas "alter" e "register"
 };
