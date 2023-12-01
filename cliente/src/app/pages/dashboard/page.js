@@ -15,7 +15,6 @@ export default  function Dashboard() {
             <ListUsers class="lista" users={users}/>
             </div>
             <div class="alterar">
-            <button class="button-1" role="button" ><span class="text"><a href="/pages/alterar">Alterar</a></span></button>
             <button class="button-2" role="button" ><span class="text"><a href="/pages/registrar">Registrar</a></span></button>
             </div>
            </Suspense>

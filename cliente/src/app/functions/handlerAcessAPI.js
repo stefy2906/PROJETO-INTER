@@ -5,8 +5,8 @@ import { cookies } from "next/dist/client/components/headers";
 const url = "http://localhost:4091";
 
 const getUserAuthenticated = async (user) => { 
+   console.log(user)
    try{//armazena os objetos
-     // console.log(user)
   const responseOfApi = await fetch(url + "/logar",
      {
        cache:"no-cache",
@@ -16,7 +16,6 @@ const getUserAuthenticated = async (user) => {
         body:JSON.stringify(user)
      }
   );
- console.log(user) //ERROR
  const userAuth = await responseOfApi.json();
  console.log(userAuth)
  return userAuth;
