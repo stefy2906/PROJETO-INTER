@@ -61,7 +61,7 @@ export default function Registrar() {
         ></input>
         </div><br/><br/>
         <div class="center">
-        <button class="button-1"  ><span class="text">Salvar</span></button>
+        <button class="button-1"><span class="text">Salvar</span></button>
         <button class="button-2"><span class="text"><a href="/pages/dashboard">Voltar</a></span></button>
         </div>
       </form>
