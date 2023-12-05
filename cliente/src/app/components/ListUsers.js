@@ -1,3 +1,5 @@
+import "./style.css"
+
 export default async function ListUsers({user}) {
     await new Promise((resolve) => setTimeout(resolve,5000));
    
@@ -5,9 +7,9 @@ export default async function ListUsers({user}) {
         <div>
        
          {user?.map ((user, index )=>
-           <p key={index}>{user.name} </p>
+           <p key={index}>{user.nome} </p>
        ) }
         
         </div>
     );
-         }
+  }

@@ -18,7 +18,7 @@ export default  function Dashboard() {
             <button class="button-2" role="button" ><span class="text"><a href="/pages/registrar">Registrar</a></span></button>
             </div>
            </Suspense>
-           <Excluir class="Excluir"/>
+           <Excluir class="excluir"/>
         </div>
     );
 };

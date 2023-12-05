@@ -6,7 +6,7 @@ body{
     background-repeat: no-repeat;
     background-size:50%;
   }
-  .Excluir, .button-2{
+.button-2{
     background-color: #f2a3b3;
     color: white;
     margin-left: 15px;
@@ -21,7 +21,21 @@ body{
     padding: 3px;
     text-decoration: none;
   }
-
+  .Excluir{
+    background-color: #f2a3b3;
+    color: white;
+    margin-left: 15px;
+    margin-top: 15px;
+    align-items: center;
+    border: 0;
+    border-radius: 8px;
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    line-height: 1em;
+    padding: 3px;
+    text-decoration: none;
+  }
   a{
     color: white;
     align-items: center;
