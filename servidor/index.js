@@ -96,7 +96,7 @@ app.post('/usuarios/cadastrar', async function(req, res){
   app.get('/usuarios/listar', async function(req,res){
     try{
     var stef = await usuario.findAll();
-    res.json({stef}); 
+    res.json(stef); 
   }catch (err) {
     console.error(err);
     res.status(500).json({ message: 'Ocorreu um erro ao buscar os usuário.🤔' });

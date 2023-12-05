@@ -1,5 +1,6 @@
 'use server'
 import { cookies } from "next/dist/client/components/headers";
+import ListUsers from "../components/ListUsers";
 
 const url = "http://localhost:4091";
 
@@ -27,12 +28,14 @@ const getUsers = async () =>{
    const token = cookies().get("token")?.value;
    try{
        const responseOfApi = await fetch(url + "/usuarios/listar",{
-           method:"GET",
+           method:"GET", 
+           cache: 'no-cache',
            headers:{'Content-type': 'Application/json',
            Cookie:`token=${token}`}
        
        });
        const listUsers = await responseOfApi.json();
+console.log(listUsers)
 
        return listUsers
    }catch{
